@@ -17,7 +17,7 @@ A simple category that allows you to add completion blocks for your `UITextField
 }];
 ```
 
-This is specially useful to avoid forking your code. Yup, I hate ifs. 
+This is specially useful to avoid forking your code. Yup, I hate `ifs` and `switches`. 
 
 ------------------------------------
 Adding UITextField+DelegationBlocks to your project
@@ -29,11 +29,8 @@ Adding UITextField+DelegationBlocks to your project
 
 *	Cocoapods: pod 'UITextField+DelegationBlocks'
 
-------------
-Requirements
-------
 
-Import the category where you want to use it:
+Finally import the category where you want to use it:
 
 * `#import "UITextField+DelegationBlocks.h"`
 
