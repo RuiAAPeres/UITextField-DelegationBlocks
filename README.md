@@ -1,5 +1,5 @@
 UITextField+DelegationBlocks
-===============
+------
 
 A simple category that allows you to add completion blocks for your `UITextField` on a per instance basis. What this means is that you can do something like this:
 
@@ -21,7 +21,7 @@ This is specially useful to avoid forking your code. Yup, I hate ifs.
 
 ------------------------------------
 Adding UITextField+DelegationBlocks to your project
-====================================
+------
 
 *	Just add the two files inside your project (`UITextField+DelegationBlocks.h` and `UITextField+DelegationBlocks.m`).
 
@@ -31,7 +31,7 @@ Adding UITextField+DelegationBlocks to your project
 
 ------------
 Requirements
-============
+------
 
 Import the category where you want to use it:
 
@@ -39,7 +39,7 @@ Import the category where you want to use it:
 
 -----
 Usage
-=====
+------
 
 Currently I added this methods:
 
@@ -54,6 +54,6 @@ I will add more if I see a need to it (I am using this on my own projects), or a
 
 -------
 License
-=======
+------
 
 This code is distributed under the terms and conditions of the MIT license. 
