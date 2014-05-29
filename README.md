@@ -43,6 +43,7 @@ Currently I added this methods:
 ```objective-c
 - (void)addTextFieldShouldChangeCharactersInRangeWithBlock:(TextFieldShouldReturnShouldChangeCharactersInRangeBlock)block;
 - (void)addTextFieldShouldReturnWithBlock:(TextFieldShouldReturn)block;
+- (void)addTextFieldShouldBeginEditingWithBlock:(TextFieldShouldReturn)block;
 - (void)addTextFieldDidBeginEditingWithBlock:(TextFieldDidBeginEditing)block;
 - (void)addTextFieldDidEndEditingWithBlock:(TextFieldDidEndEditing)block;
 

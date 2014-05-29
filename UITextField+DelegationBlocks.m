@@ -11,6 +11,7 @@
 
 static NSString *const kTextFieldShouldChangeCharactersInRange = @"kShouldChangeCharactersInRange";
 static NSString *const kTextFieldShouldReturn = @"kTextFieldShouldReturn";
+static NSString *const kTextFieldShouldBeginEditing = @"kTextFieldShouldBeginEditing";
 static NSString *const kTextFieldDidBeginEditing = @"kTextFieldDidBeginEditing";
 static NSString *const kTextFieldDidEndEditing = @"kTextFieldDidEndEditing";
 
@@ -52,6 +53,20 @@ static char const * const kProxyDelegate = "kProxyDelegate";
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     TextFieldShouldReturn block = [_blocksDictionary objectForKey:kTextFieldShouldReturn];
+    
+    BOOL defaultReturnValue = YES;
+    
+    if (block)
+    {
+        defaultReturnValue = block(textField);
+    }
+    
+    return defaultReturnValue;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    TextFieldShouldReturn block = [_blocksDictionary objectForKey:kTextFieldShouldBeginEditing];
     
     BOOL defaultReturnValue = YES;
     
@@ -115,6 +130,14 @@ static char const * const kProxyDelegate = "kProxyDelegate";
     [self checkAndSetDelegate];
     UITextFieldProxyDelegate *proxyDelegate = objc_getAssociatedObject(self, &kProxyDelegate);
     [[proxyDelegate blocksDictionary] setObject:[block copy] forKey:kTextFieldShouldReturn];
+}
+
+- (void)addTextFieldShouldBeginEditingWithBlock:(TextFieldShouldReturn)block
+{
+    [self checkAndSetDelegate];
+    UITextFieldProxyDelegate *proxyDelegate = objc_getAssociatedObject(self, &kProxyDelegate);
+    [[proxyDelegate blocksDictionary] setObject:[block copy] forKey:kTextFieldShouldBeginEditing];
+    
 }
 
 - (void)addTextFieldDidBeginEditingWithBlock:(TextFieldDidBeginEditing)block

@@ -20,6 +20,7 @@ typedef void(^TextFieldDidEndEditing)(UITextField *textField);
 - (void)addTextFieldShouldChangeCharactersInRangeWithBlock:(TextFieldShouldReturnShouldChangeCharactersInRangeBlock)block;
 
 - (void)addTextFieldShouldReturnWithBlock:(TextFieldShouldReturn)block;
+- (void)addTextFieldShouldBeginEditingWithBlock:(TextFieldShouldReturn)block;
 - (void)addTextFieldDidBeginEditingWithBlock:(TextFieldDidBeginEditing)block;
 - (void)addTextFieldDidEndEditingWithBlock:(TextFieldDidEndEditing)block;
 
