@@ -27,7 +27,7 @@ Adding UITextField+DelegationBlocks to your project
 
 **Or**
 
-*	Cocoapods: pod 'UITextField+DelegationBlocks', '~> 1.0'`
+*	CocoaPods: pod 'UITextField+DelegationBlocks', '~> 1.0'`
 
 
 Finally import the category where you want to use it:
